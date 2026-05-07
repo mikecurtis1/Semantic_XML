@@ -12,3 +12,12 @@ This makes the sonnet a useful example for exploring how XML schemas can operate
 
 Seen this way, the example is not about poetry as subject matter, but about structure itself: specifically, how far a schema can move from describing a document toward encoding the rules that generate its meaning.
 
+## Workflow
+
+```text
+XML document
+   ↓
+DTD/XSD validation
+   ↓
+CSS presentation
+```
