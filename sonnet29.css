@@ -1,0 +1,117 @@
+@viewport {
+  width: device-width;
+  initial-scale: 1;
+}
+
+document {
+    display: block;
+}
+
+sonnet {
+    display: block;
+    background-color:#eeeece;
+    padding: 1em;
+    margin: 1em;
+    line-height: 1.5em;
+}
+
+title {
+    display: block;
+    font-family: Arial, sans-serif;
+    color: #696969; 
+    font-size: 2em;
+    padding: 0 1em 1em 0;
+}
+
+quatrain {
+    display: block;
+    padding: 0 1em 1em 1em;
+}
+
+line {
+    display: block;
+    font-family: Verdana, sans-serif;
+    font-size: 1em;
+}
+
+first_letter {
+    display: inline;
+    font-family: Garamond, serif;
+    font-size: 2em;
+}
+
+first_word {
+    display: inline;
+    font-family: Garamond, serif;
+    font-size: 1.25em;
+    font-variant: small-caps;
+    letter-spacing: 0.3em;
+}
+
+couplet {
+    display: block;
+    padding: 0 1em 1em 1em;
+    text-indent: 2em;
+}
+
+rhymeA {
+    display: inline;
+    font-family: Verdana, sans-serif;
+    color: #00008B;
+    font-weight: bold;
+}
+
+rhymeB {
+    display: inline;
+    font-family: Verdana, sans-serif;
+    color: #008000; 
+    font-weight: bold;
+}
+
+rhymeC {
+    display: inline;
+    font-family: Verdana, sans-serif;
+    color: #800000; 
+    font-weight: bold;
+}
+
+rhymeD {
+    display: inline;
+    font-family: Verdana, sans-serif;
+    color: #008080; 
+    font-weight: bold;
+}
+
+rhymeE {
+    display: inline;
+    font-family: Verdana, sans-serif;
+    color: #800080; 
+    font-weight: bold;
+}
+
+rhymeF {
+    display: inline;
+    font-family: Verdana,sans-serif;
+    color: #FF7F50; 
+    font-weight: bold;
+}
+
+rhymeG {
+    display: inline;
+    font-family: Verdana, sans-serif;
+    color: #DC143C; 
+    font-weight: bold;
+}
+
+author {
+    display: block;
+    padding: 1em;
+    font-family: Verdana, sans-serif;
+    font-style: italic;
+}
+
+hr {
+    color: #303030;
+    background-color: #303030;
+    height: 0.1em;
+}
