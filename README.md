@@ -1,4 +1,4 @@
-# XML Sonnect
+# XML Sonnet
 
 ## Why a Sonnet?
 
