@@ -26,6 +26,10 @@ CSS presentation
 xmllint --noout --dtdvalid src/sonnet.dtd src/sonnet.xml
 ```
 
+The browser is a “renderer”, not a transformer.
+
+
+
 ```bash
 xmllint --noout --schema src/sonnet.xsd src/sonnet.xml
 ```
