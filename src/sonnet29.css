@@ -100,49 +100,49 @@ couplet {
     text-indent: 2em;
 }
 
-rhymeA {
+rhyme[id="A"] {
     display: inline;
     font-family: Verdana, sans-serif;
     color: #00008B;
     font-weight: bold;
 }
 
-rhymeB {
+rhyme[id="B"] {
     display: inline;
     font-family: Verdana, sans-serif;
     color: #008000; 
     font-weight: bold;
 }
 
-rhymeC {
+rhyme[id="C"] {
     display: inline;
     font-family: Verdana, sans-serif;
     color: #800000; 
     font-weight: bold;
 }
 
-rhymeD {
+rhyme[id="D"] {
     display: inline;
     font-family: Verdana, sans-serif;
     color: #008080; 
     font-weight: bold;
 }
 
-rhymeE {
+rhyme[id="E"] {
     display: inline;
     font-family: Verdana, sans-serif;
     color: #800080; 
     font-weight: bold;
 }
 
-rhymeF {
+rhyme[id="F"] {
     display: inline;
     font-family: Verdana,sans-serif;
     color: #FF7F50; 
     font-weight: bold;
 }
 
-rhymeG {
+rhyme[id="G"] {
     display: inline;
     font-family: Verdana, sans-serif;
     color: #DC143C; 
@@ -154,10 +154,4 @@ author {
     padding: 1em;
     font-family: var(--font-author);
     font-style: italic;
-}
-
-hr {
-    color: #303030;
-    background-color: #303030;
-    height: 0.1em;
 }
