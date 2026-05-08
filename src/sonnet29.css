@@ -101,7 +101,7 @@ rhyme[cadence="consequent"] {
 }
 
 rhyme[type="perfect"] {
-  text-decoration: none;
+  font-style: normal;
 }
 
 rhyme[type="near"] {
