@@ -1,9 +1,9 @@
-FROM eclipse-temurin:17-jre
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y \
+    libxml2-utils \
+ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY saxon-he-12.9.jar /app/
-COPY lib /app/lib
 COPY src /app/src
-
-
