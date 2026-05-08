@@ -83,7 +83,7 @@ sonnet {
 title {
     display: block;
     font-family: var(--font-title);
-    color: #696969; 
+    /* color: #696969; */ 
     font-size: 2em;
     padding: 0 1em 1em 0;
 }
