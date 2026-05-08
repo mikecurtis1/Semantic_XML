@@ -45,6 +45,7 @@
   --font-title: "IM Fell DW Pica", serif;
   --font-first-word: "IM Fell DW Pica", serif;
   --font-line: "IM Fell DW Pica", serif;
+  --font-rhyme: "IM Fell DW Pica", serif;
   --font-author: "Dr Sugiyama", serif;
 }
 
@@ -100,53 +101,53 @@ couplet {
     text-indent: 2em;
 }
 
+rhyme {
+  font-family: var(--font-rhyme);
+  display: inline;
+}
+
+rhyme[cadence="antecedent"] {
+  font-weight: normal;
+}
+
+rhyme[cadence="consequent"] {
+  font-weight: bold;
+}
+
+rhyme[type="perfect"] {
+  text-decoration: none;
+}
+
+rhyme[type="near"] {
+  text-decoration: underline;
+}
+
 rhyme[id="A"] {
-    display: inline;
-    font-family: Verdana, sans-serif;
     color: #00008B;
-    font-weight: bold;
 }
 
 rhyme[id="B"] {
-    display: inline;
-    font-family: Verdana, sans-serif;
     color: #008000; 
-    font-weight: bold;
 }
 
 rhyme[id="C"] {
-    display: inline;
-    font-family: Verdana, sans-serif;
     color: #800000; 
-    font-weight: bold;
 }
 
 rhyme[id="D"] {
-    display: inline;
-    font-family: Verdana, sans-serif;
     color: #008080; 
-    font-weight: bold;
 }
 
 rhyme[id="E"] {
-    display: inline;
-    font-family: Verdana, sans-serif;
     color: #800080; 
-    font-weight: bold;
 }
 
 rhyme[id="F"] {
-    display: inline;
-    font-family: Verdana,sans-serif;
     color: #FF7F50; 
-    font-weight: bold;
 }
 
 rhyme[id="G"] {
-    display: inline;
-    font-family: Verdana, sans-serif;
     color: #DC143C; 
-    font-weight: bold;
 }
 
 author {
