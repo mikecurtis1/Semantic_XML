@@ -3,6 +3,8 @@
   initial-scale: 1;
 }
 
+@import url('https://googleapis.com');
+
 document {
     display: block;
 }
@@ -17,7 +19,7 @@ sonnet {
 
 title {
     display: block;
-    font-family: Arial, sans-serif;
+    font-family: "IM Fell DW Pica", serif;
     color: #696969; 
     font-size: 2em;
     padding: 0 1em 1em 0;
