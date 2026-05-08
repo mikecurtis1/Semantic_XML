@@ -34,7 +34,8 @@ line {
     font-size: 1em;
 }
 
-first_letter {
+/* first_letter { */
+quatrain[number="1"] line[number="1"]::first-letter {
     display: inline;
     font-family: Garamond, serif;
     font-size: 2em;
