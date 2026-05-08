@@ -21,3 +21,12 @@ DTD/XSD validation
    ↓
 CSS presentation
 ```
+
+```bash
+xmllint --noout --dtdvalid src/sonnet.dtd src/sonnet.xml
+```
+
+```bash
+xmllint --noout --schema src/sonnet.xsd src/sonnet.xml
+```
+
