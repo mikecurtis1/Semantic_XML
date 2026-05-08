@@ -173,5 +173,6 @@ author {
     display: block;
     padding: 1em;
     font-family: var(--font-author);
-    font-style: italic;
+    /* font-style: italic;*/
+    font-size: 2em;
 }
