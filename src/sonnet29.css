@@ -97,7 +97,7 @@ rhyme[cadence="antecedent"] {
 }
 
 rhyme[cadence="consequent"] {
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 rhyme[type="perfect"] {
@@ -105,7 +105,7 @@ rhyme[type="perfect"] {
 }
 
 rhyme[type="near"] {
-  text-decoration: underline;
+  text-style: italic;
 }
 
 rhyme[id="A"] {
