@@ -93,7 +93,7 @@ rhyme {
 }
 
 rhyme[cadence="antecedent"] {
-  font-weight: normal;
+  text-decoration: none;
 }
 
 rhyme[cadence="consequent"] {
