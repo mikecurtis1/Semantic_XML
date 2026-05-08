@@ -108,31 +108,31 @@ rhyme[type="near"] {
   font-style: italic;
 }
 
-rhyme[id="A"] {
+rhyme[scheme="A"] {
   color: #00008B;
 }
 
-rhyme[id="B"] {
+rhyme[scheme="B"] {
   color: #008000; 
 }
 
-rhyme[id="C"] {
+rhyme[scheme="C"] {
   color: #800000; 
 }
 
-rhyme[id="D"] {
+rhyme[scheme="D"] {
   color: #008080; 
 }
 
-rhyme[id="E"] {
+rhyme[scheme="E"] {
   color: #800080; 
 }
 
-rhyme[id="F"] {
+rhyme[scheme="F"] {
   color: #FF7F50; 
 }
 
-rhyme[id="G"] {
+rhyme[scheme="G"] {
   color: #DC143C; 
 }
 
