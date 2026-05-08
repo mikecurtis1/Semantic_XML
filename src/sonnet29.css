@@ -174,7 +174,12 @@ author {
     padding: 1em;
     font-family: var(--font-author);
     /* font-style: italic;*/
-    font-size: 2em;
+    font-size: 1em;
     font-variant: small-caps;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.2em;
+}
+
+author date {
+  font-variant: normal;
+  letter-spacing: normal;
 }
