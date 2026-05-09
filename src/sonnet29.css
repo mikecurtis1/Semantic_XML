@@ -32,6 +32,7 @@
 
 document {
   display: block;
+  padding: 2em;
 }
 
 sonnet {
@@ -44,7 +45,6 @@ sonnet {
   width: max-content;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3em;
   box-shadow: 5px 10px 15px #dfddd8;
 }
 
