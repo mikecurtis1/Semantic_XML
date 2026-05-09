@@ -26,6 +26,9 @@
 		<line number="1">For thy sweet love remember'd such wealth br<rhyme scheme="G" type="perfect" cadence="antecedent">ings</rhyme>,</line>
 		<line number="2">That then I scorn to change my state with k<rhyme scheme="G" type="perfect" cadence="consequent">ings</rhyme>.</line>
 	</couplet>
-	<author>William Shakespeare <date>(1564-1616)</date></author>
+	<author>
+		<name>William Shakespeare</name>
+		<date>(1564-1616)</date>
+	</author>
   </sonnet>
 </document>
