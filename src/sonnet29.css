@@ -38,7 +38,7 @@ document {
 sonnet {
   display: block;
   background-color: #f8f3e9;
-  padding: 6em;
+  padding: 6em 6em 4em 6em;
   border: 2em solid #e9e4db;
   line-height: 1.5em;
   white-space: nowrap;
@@ -155,8 +155,9 @@ author::after {
   content: "❧"; /* Unicode for floral heart */
   display: block;
   font-size: 1.5em;
-  padding: 2px;
+  padding: 2em 0 0 0;
   margin-left: auto;
   margin-right: auto;
   width: max-content;
+  color: #363432;
 }
