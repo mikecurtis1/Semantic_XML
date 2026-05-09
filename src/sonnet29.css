@@ -150,3 +150,14 @@ author date {
   font-variant: normal;
   letter-spacing: normal;
 }
+
+author::after {
+    content: "❧"; /* Unicode for floral heart */
+    display: inline-block;
+    position: relative;
+    top: -0.7em; /* Adjust to sit on the imaginary line */
+    font-size: 1.5em;
+    padding: 0 10px;
+    background: white; /* Matches your background to 'break' the line */
+    color: #555;
+}
