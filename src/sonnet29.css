@@ -72,6 +72,7 @@ quatrain[number="1"] line[number="1"]::first-letter {
   font-family: Garamond, serif;
   font-size: 2em;
   float:left;
+  padding-top: 0.25em;
 }
 
 first_word {
