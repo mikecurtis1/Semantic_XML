@@ -152,7 +152,7 @@ author date {
 }
 
 author::after {
-  content: "❦"; /* Unicode for floral heart */
+  content: "✵"; /* fleurons: ✵ ❦ ❧, asterism ⁂ */
   display: block;
   font-size: 1.5em;
   padding: 2em 0 0 0;
