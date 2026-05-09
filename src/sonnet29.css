@@ -68,7 +68,7 @@ line {
 }
 
 quatrain[number="1"] line[number="1"]::first-letter {
-  display: inline;
+  display: block;
   font-family: Garamond, serif;
   font-size: 2em;
   float:left;
