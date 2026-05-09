@@ -146,6 +146,7 @@ author {
 }
 
 author date {
+  margin-left: 1em;
   font-variant: normal;
   letter-spacing: normal;
 }
