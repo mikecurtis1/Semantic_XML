@@ -172,4 +172,3 @@ src/sonnet29.xml validates
 ![PNG of CSS rendering](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029.png)
 
 
-
