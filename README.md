@@ -67,11 +67,11 @@ xmllint --noout --schema src/sonnet29.xsd src/sonnet29.xml
 
 Schema precision issues
 
-<!ELEMENT line (first_word?,(#PCDATA), rhyme)>
+\<!ELEMENT line (first_word?,(#PCDATA), rhyme)\>
 
 versus 
 
-<!ELEMENT line (#PCDATA | first_word | rhyme)*>
+\<!ELEMENT line (#PCDATA | first_word | rhyme)*\>
 
 ```text
 <!ELEMENT document (sonnet+)>
