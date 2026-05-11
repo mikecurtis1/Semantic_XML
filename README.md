@@ -22,6 +22,36 @@ DTD/XSD validation
 CSS presentation
 ```
 
+## Dockerfile
+
+```text
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y \
+    libxml2-utils \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY src /app/src
+```
+
+## Docker
+
+```bash
+docker build -t sonnet-img .
+```
+```bash
+docker run -d --name sonnet-container sonnet-img tail -f /dev/null
+```
+```bash
+docker exec -it sonnet-container bash
+```
+
+---
+
+## xmllint
+
 ```bash
 xmllint --noout --dtdvalid src/sonnet.dtd src/sonnet.xml
 ```
