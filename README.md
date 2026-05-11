@@ -90,11 +90,15 @@ head src/sonnet29.dtd
 
 Schema precision issues
 
-\<!ELEMENT line (first_word?,(#PCDATA), rhyme)\>
-
-versus 
-
-\<!ELEMENT line (#PCDATA | first_word | rhyme)*\>
+> ```xml
+> <!ELEMENT line (first_word?,(#PCDATA), rhyme)>
+> ```
+>
+> versus 
+>
+> ```xml
+> <!ELEMENT line (#PCDATA | first_word | rhyme)*>
+> ```
 
 ```bash
 xmllint --noout --dtdvalid src/sonnet29.dtd src/sonnet29.xml
