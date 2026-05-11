@@ -91,13 +91,13 @@ head src/sonnet29.dtd
 Schema precision issues
 
 > ```xml
-> <!ELEMENT line (first_word?,(#PCDATA), rhyme)>
+> <!ELEMENT line (first_word?, (#PCDATA), rhyme)>
 > ```
 >
 > versus 
 >
 > ```xml
-> <!ELEMENT line (#PCDATA | first_word | rhyme)*>
+> <!ELEMENT line (#PCDATA|first_word|rhyme)*>
 > ```
 
 ```bash
