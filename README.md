@@ -108,7 +108,9 @@ head src/sonnet29.dtd
                         <!ELEMENT rhymeB (#PCDATA)>
 ```
 
-### XML Lint
+### libxml2 & XML Lint
+
+> <https://gitlab.gnome.org/GNOME/libxml2>
 
 ```bash
 xmllint --noout --dtdvalid src/sonnet29.dtd src/sonnet29.xml
