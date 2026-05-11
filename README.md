@@ -36,6 +36,8 @@ xmllint --noout --schema src/sonnet.xsd src/sonnet.xml
 
 ---
 
+### Docker
+
 ```bash
 docker build -t sonnet-img .
 ```
@@ -45,8 +47,13 @@ docker run -d --name sonnet-container sonnet-img tail -f /dev/null
 ```bash
 docker exec -it sonnet-container bash
 ```
+
+### Filesystem
+
 ```bash
 pwd
+```
+```text
 /app
 ```
 ```bash
@@ -100,6 +107,9 @@ head src/sonnet29.dtd
                         <!ELEMENT rhymeA (#PCDATA)>
                         <!ELEMENT rhymeB (#PCDATA)>
 ```
+
+### XML Lint
+
 ```bash
 xmllint --noout --dtdvalid src/sonnet29.dtd src/sonnet29.xml
 ```
