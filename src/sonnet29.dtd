@@ -1,26 +1,15 @@
 <!ELEMENT document (sonnet+)>
-  <!ELEMENT sonnet (title,quatrain,quatrain,quatrain,couplet,author,hr)>
+  <!ELEMENT sonnet (title, quatrain, quatrain, quatrain, couplet, author)>
 	<!ELEMENT title (#PCDATA)>
-	<!ELEMENT quatrain (line,line,line,line)>
-	<!ELEMENT couplet (line,line)>
-		<!ELEMENT line ANY>
-			<!ELEMENT first_word (#PCDATA|first_letter)*>
-				<!ELEMENT first_letter (#PCDATA)>
-			<!ELEMENT rhymeA (#PCDATA)>
-			<!ELEMENT rhymeB (#PCDATA)>
-			<!ELEMENT rhymeC (#PCDATA)>
-			<!ELEMENT rhymeD (#PCDATA)>
-			<!ELEMENT rhymeE (#PCDATA)>
-			<!ELEMENT rhymeF (#PCDATA)>
-			<!ELEMENT rhymeG (#PCDATA)>
-	<!ELEMENT author (#PCDATA)>
-	<!ELEMENT hr EMPTY>
-			<!ATTLIST quatrain number CDATA #REQUIRED>
-			<!ATTLIST line number CDATA #REQUIRED>
-			<!ATTLIST rhymeA type CDATA #REQUIRED cadence CDATA #REQUIRED>
-			<!ATTLIST rhymeB type CDATA #REQUIRED cadence CDATA #REQUIRED>
-			<!ATTLIST rhymeC type CDATA #REQUIRED cadence CDATA #REQUIRED>
-			<!ATTLIST rhymeD type CDATA #REQUIRED cadence CDATA #REQUIRED>
-			<!ATTLIST rhymeE type CDATA #REQUIRED cadence CDATA #REQUIRED>
-			<!ATTLIST rhymeF type CDATA #REQUIRED cadence CDATA #REQUIRED>
-			<!ATTLIST rhymeG type CDATA #REQUIRED cadence CDATA #REQUIRED>
+	<!ELEMENT quatrain (line, line, line, line)>
+	<!ELEMENT couplet (line, line)>
+		<!ELEMENT line (#PCDATA|first_word|rhyme)*>
+			<!ELEMENT first_word (#PCDATA)>
+			<!ELEMENT rhyme (#PCDATA)>
+	<!ELEMENT author (name,date)>
+		<!ELEMENT name (#PCDATA)>
+		<!ELEMENT date (#PCDATA)>
+<!ATTLIST quatrain number (1|2|3) #REQUIRED>
+<!ATTLIST line number (1|2|3|4) #REQUIRED>
+<!ATTLIST rhyme scheme (A|B|C|D|E|F|G) #REQUIRED type (perfect|near) #REQUIRED cadence (antecedent|consequent) #REQUIRED>
+
