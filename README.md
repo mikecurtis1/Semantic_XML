@@ -53,14 +53,14 @@ docker exec -it sonnet-container bash
 ## xmllint
 
 ```bash
-xmllint --noout --dtdvalid src/sonnet.dtd src/sonnet.xml
+xmllint --noout --dtdvalid src/sonnet29.dtd src/sonnet29.xml
 ```
 
 The browser is a “renderer”, not a transformer.
 
 
 ```bash
-xmllint --noout --schema src/sonnet.xsd src/sonnet.xml
+xmllint --noout --schema src/sonnet29.xsd src/sonnet29.xml
 ```
 
 --- 
