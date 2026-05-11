@@ -29,6 +29,17 @@ xmllint --noout --dtdvalid src/sonnet.dtd src/sonnet.xml
 The browser is a “renderer”, not a transformer.
 
 
+--- 
+
+Schema precision issues
+
+<!ELEMENT line (first_word?,(#PCDATA), rhyme)>
+
+versus 
+
+<!ELEMENT line (#PCDATA | first_word | rhyme)*>
+
+
 
 ```bash
 xmllint --noout --schema src/sonnet.xsd src/sonnet.xml
