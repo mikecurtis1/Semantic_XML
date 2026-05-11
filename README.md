@@ -2,6 +2,8 @@
 
 While the XML schema could theoretically enforce a rigid Shakespearean rhyme sequence such as `ABAB CDCD EFEF GG`, doing so would overconstrain the model and fail to reflect the more fluid rhyme relationships present within the poem itself (sonnet 29 has an actual rhyme scheme of `ABAB CDCD EBEB GG`.) The schema instead emphasizes "cadence" relationships (antecedent/consequent) - cadence, antecedent, and consequent are terms I borrowed from music theory, but represent well the actual attributes of rhyming in sonnet 29 - as a more generalized representation of poetic structural function while leaving specific rhyme identity more flexible.
 
+Attempting to fully encode the Shakespearean rhyme sequence directly into XSD quickly causes the schema to become excessively instance-specific, effectively transforming the schema into a structural duplicate of the sonnet itself. The project therefore intentionally stops short of enforcing exact rhyme-order semantics in favor of maintaining a more generalized and reusable document model.
+
 `ABAB CDCD EFEF GG ` is a formal abstraction, and ideal, but in actuality the formal design is more accurately... 
 
 Quatrain
