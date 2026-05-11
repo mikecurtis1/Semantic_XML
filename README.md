@@ -36,7 +36,7 @@ WORKDIR /app
 COPY src /app/src
 ```
 
-## Docker
+## Docker set up
 
 ```bash
 docker build -t sonnet-img .
@@ -63,11 +63,11 @@ head src/sonnet29.xml
 <!DOCTYPE document SYSTEM "sonnet29.dtd">
 <document>
   <sonnet>
-        <title>Sonnet XXIX</title>
-        <quatrain number="1">
-                <line number="1"><first_word><first_letter>W</first_letter>hen</first_word> in disgrace with fortune and men's e<rhymeA type="perfect" cadence="antecedent">yes</rhymeA>,</line>
-                <line number="2">I all alone beweep my outcast st<rhymeB type="perfect" cadence="antecedent">ate</rhymeB>,</line>
-                <line number="3">And trouble deaf heaven with my bootless cr<rhymeA type="perfect" cadence="consequent">ies</rhymeA>,</line>
+    <title>Sonnet XXIX</title>
+    <quatrain number="1">
+      <line number="1"><first_word><first_letter>W</first_letter>hen</first_word> in disgrace with fortune and men's e<rhymeA type="perfect" cadence="antecedent">yes</rhymeA>,</line>
+      <line number="2">I all alone beweep my outcast st<rhymeB type="perfect" cadence="antecedent">ate</rhymeB>,</line>
+      <line number="3">And trouble deaf heaven with my bootless cr<rhymeA type="perfect" cadence="consequent">ies</rhymeA>,</line>
 ```
 
 ### DTD
@@ -78,14 +78,14 @@ head src/sonnet29.dtd
 ```xml
 <!ELEMENT document (sonnet+)>
   <!ELEMENT sonnet (title,quatrain,quatrain,quatrain,couplet,author,hr)>
-        <!ELEMENT title (#PCDATA)>
-        <!ELEMENT quatrain (line,line,line,line)>
-        <!ELEMENT couplet (line,line)>
-                <!ELEMENT line ANY>
-                        <!ELEMENT first_word (#PCDATA|first_letter)*>
-                                <!ELEMENT first_letter (#PCDATA)>
-                        <!ELEMENT rhymeA (#PCDATA)>
-                        <!ELEMENT rhymeB (#PCDATA)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT quatrain (line,line,line,line)>
+    <!ELEMENT couplet (line,line)>
+      <!ELEMENT line ANY>
+        <!ELEMENT first_word (#PCDATA|first_letter)*>
+          <!ELEMENT first_letter (#PCDATA)>
+        <!ELEMENT rhymeA (#PCDATA)>
+        <!ELEMENT rhymeB (#PCDATA)>
 ```
 
 Schema precision issues
@@ -164,4 +164,11 @@ src/sonnet29.xml validates
 ## CSS 
 
 > The browser is a “renderer”, not a transformer.
+
+[Sonnet XXIX rendered with CSS in browser](https://mikecurtis1.github.io/XML_Sonnet/src/sonnet29.xml)
+
+![Image of 1609 printing](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029_1609.jpg)
+
+![PNG of CSS rendering](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029.png)
+
 
