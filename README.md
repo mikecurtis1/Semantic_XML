@@ -167,7 +167,7 @@ src/sonnet29.xml validates
 
 [Sonnet XXIX rendered with CSS in browser](https://mikecurtis1.github.io/XML_Sonnet/src/sonnet29.xml)
 
-![Image of 1609 printing](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029_1609.jpg)
+![Image of 1609 printing](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029_1609.png)
 
 ![PNG of CSS rendering](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029.png)
 
