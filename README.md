@@ -1,6 +1,6 @@
 # Semantic XML
 
-Introduction. Originally meant as a demonstration piece, the promise of XML to allow pure structural and semantic markup with full separation of visual rendering using CSS style sheets. The document is not metadata, which may need _tranformation_ (for example to dynamically transform metadata into hyperlinks), but is rather pure content with XML annotating structural and semantic features of the text.
+Introduction. Originally meant as a demonstration piece, the promise of XML to allow pure structural and semantic markup with full separation of visual rendering using CSS style sheets. The document is not metadata, which may need _transformation_ (for example to dynamically transform metadata into hyperlinks), but is rather pure content with XML annotating structural and semantic features of the text.
 
 Schema to validate semantic structure and CSS to render visually.
 
