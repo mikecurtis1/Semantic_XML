@@ -3,115 +3,156 @@
   initial-scale: 1;
 }
 
+/* latin */
+@font-face {
+  font-family: 'IM Fell DW Pica';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/imfelldwpica/v16/2sDEZGRQotv9nbn2qSl0TxXVYNwNZjnXlis.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'IM Fell DW Pica';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/imfelldwpica/v16/2sDGZGRQotv9nbn2qSl0TxXVYNwNYwnV.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --font-title: "IM Fell DW Pica", serif;
+  --font-first-word: "IM Fell DW Pica", serif;
+  --font-line: "IM Fell DW Pica", serif;
+  --font-rhyme: "IM Fell DW Pica", serif;
+  --font-author: "IM Fell DW Pica", serif;
+}
+
 document {
-    display: block;
+  display: block;
+  padding: 2em;
 }
 
 sonnet {
-    display: block;
-    background-color:#eeeece;
-    padding: 1em;
-    margin: 1em;
-    line-height: 1.5em;
+  display: block;
+  background-color: #f8f3e9;
+  padding: 6em 6em 4em 6em;
+  border: 2em solid #e9e4db;
+  line-height: 1.5em;
+  white-space: nowrap;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 10px 15px #dfddd8;
 }
 
 title {
-    display: block;
-    font-family: Arial, sans-serif;
-    color: #696969; 
-    font-size: 2em;
-    padding: 0 1em 1em 0;
+  display: block;
+  font-family: var(--font-title);
+  /* color: #696969; */ 
+  font-size: 2em;
+  padding: 0 1em 1em 0;
 }
 
 quatrain {
-    display: block;
-    padding: 0 1em 1em 1em;
+  display: block;
+  padding: 0 1em 1em 1em;
 }
 
 line {
-    display: block;
-    font-family: Verdana, sans-serif;
-    font-size: 1em;
+  display: block;
+  font-family: var(--font-line);
+  font-size: 1em;
 }
 
-first_letter {
-    display: inline;
-    font-family: Garamond, serif;
-    font-size: 2em;
-}
-
-first_word {
-    display: inline;
-    font-family: Garamond, serif;
-    font-size: 1.25em;
-    font-variant: small-caps;
-    letter-spacing: 0.3em;
+quatrain[number="1"] line[number="1"]::first-letter {
+  display: inline;
+  font-family: Garamond, serif;
+  font-size: 3em;
+  float:left;
+  padding-top: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 couplet {
-    display: block;
-    padding: 0 1em 1em 1em;
-    text-indent: 2em;
+  display: block;
+  padding: 0 1em 1em 1em;
+  text-indent: 2em;
 }
 
-rhymeA {
-    display: inline;
-    font-family: Verdana, sans-serif;
-    color: #00008B;
-    font-weight: bold;
+rhyme {
+  font-family: var(--font-rhyme);
+  display: inline;
 }
 
-rhymeB {
-    display: inline;
-    font-family: Verdana, sans-serif;
-    color: #008000; 
-    font-weight: bold;
+rhyme[cadence="antecedent"] {
+  text-decoration: none;
 }
 
-rhymeC {
-    display: inline;
-    font-family: Verdana, sans-serif;
-    color: #800000; 
-    font-weight: bold;
+rhyme[cadence="consequent"] {
+  text-decoration: underline;
 }
 
-rhymeD {
-    display: inline;
-    font-family: Verdana, sans-serif;
-    color: #008080; 
-    font-weight: bold;
+rhyme[type="perfect"] {
+  font-style: normal;
 }
 
-rhymeE {
-    display: inline;
-    font-family: Verdana, sans-serif;
-    color: #800080; 
-    font-weight: bold;
+rhyme[type="near"] {
+  font-style: italic;
 }
 
-rhymeF {
-    display: inline;
-    font-family: Verdana,sans-serif;
-    color: #FF7F50; 
-    font-weight: bold;
+rhyme[scheme="A"] {
+  color: #00008B;
 }
 
-rhymeG {
-    display: inline;
-    font-family: Verdana, sans-serif;
-    color: #DC143C; 
-    font-weight: bold;
+rhyme[scheme="B"] {
+  color: #008000; 
+}
+
+rhyme[scheme="C"] {
+  color: #800000; 
+}
+
+rhyme[scheme="D"] {
+  color: #008080; 
+}
+
+rhyme[scheme="E"] {
+  color: #800080; 
+}
+
+rhyme[scheme="F"] {
+  color: #FF7F50; 
+}
+
+rhyme[scheme="G"] {
+  color: #DC143C; 
 }
 
 author {
-    display: block;
-    padding: 1em;
-    font-family: Verdana, sans-serif;
-    font-style: italic;
+  display: block;
+  padding: 1em;
+  font-family: var(--font-author);
+  font-size: 1em;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
 }
 
-hr {
-    color: #303030;
-    background-color: #303030;
-    height: 0.1em;
+author date {
+  margin-left: 1em;
+  font-variant: normal;
+  letter-spacing: normal;
+}
+
+author::after {
+  content: "✵"; /* fleurons: ✵ ❦ ❧, asterism ⁂ */
+  display: block;
+  font-size: 1.5em;
+  padding: 2em 0 0 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  color: #363432;
 }
