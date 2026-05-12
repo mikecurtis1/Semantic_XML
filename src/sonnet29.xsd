@@ -25,9 +25,9 @@
 
       <!-- exactly three quatrains -->
 
-      <xs:element name="quatrain" type="quatrain1Type"/>
-      <xs:element name="quatrain" type="quatrain2Type"/>
-      <xs:element name="quatrain" type="quatrain3Type"/>
+      <xs:element name="quatrain" type="quatrainType"/>
+      <xs:element name="quatrain" type="quatrainType"/>
+      <xs:element name="quatrain" type="quatrainType"/>
 
       <!-- exactly one couplet -->
 
@@ -41,56 +41,32 @@
   </xs:complexType>
 
   <!-- ========================================================= -->
-  <!-- QUATRAIN 1 -->
+  <!-- QUATRAIN -->
   <!-- ========================================================= -->
 
-  <xs:complexType name="quatrain1Type">
+  <xs:complexType name="quatrainType">
     <xs:sequence>
 
-      <xs:element name="line" type="quatrainAntecedentLine1"/>
-      <xs:element name="line" type="quatrainAntecedentLine2"/>
-      <xs:element name="line" type="quatrainConsequentLine3"/>
-      <xs:element name="line" type="quatrainConsequentLine4"/>
+      <!-- exactly four lines -->
+
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
 
     </xs:sequence>
 
-    <xs:attribute name="number" use="required" fixed="1"/>
+    <xs:attribute name="number" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
 
-  </xs:complexType>
+          <xs:enumeration value="1"/>
+          <xs:enumeration value="2"/>
+          <xs:enumeration value="3"/>
 
-  <!-- ========================================================= -->
-  <!-- QUATRAIN 2 -->
-  <!-- ========================================================= -->
-
-  <xs:complexType name="quatrain2Type">
-    <xs:sequence>
-
-      <xs:element name="line" type="quatrainAntecedentLine1"/>
-      <xs:element name="line" type="quatrainAntecedentLine2"/>
-      <xs:element name="line" type="quatrainConsequentLine3"/>
-      <xs:element name="line" type="quatrainConsequentLine4"/>
-
-    </xs:sequence>
-
-    <xs:attribute name="number" use="required" fixed="2"/>
-
-  </xs:complexType>
-
-  <!-- ========================================================= -->
-  <!-- QUATRAIN 3 -->
-  <!-- ========================================================= -->
-
-  <xs:complexType name="quatrain3Type">
-    <xs:sequence>
-
-      <xs:element name="line" type="quatrainAntecedentLine1"/>
-      <xs:element name="line" type="quatrainAntecedentLine2"/>
-      <xs:element name="line" type="quatrainConsequentLine3"/>
-      <xs:element name="line" type="quatrainConsequentLine4"/>
-
-    </xs:sequence>
-
-    <xs:attribute name="number" use="required" fixed="3"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
 
   </xs:complexType>
 
@@ -101,104 +77,44 @@
   <xs:complexType name="coupletType">
     <xs:sequence>
 
-      <xs:element name="line" type="coupletAntecedentLine1"/>
-      <xs:element name="line" type="coupletConsequentLine2"/>
+      <!-- exactly two lines -->
+
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
 
     </xs:sequence>
   </xs:complexType>
 
   <!-- ========================================================= -->
-  <!-- BASE LINE TYPE -->
+  <!-- LINE -->
   <!-- ========================================================= -->
 
-  <xs:complexType name="baseLineType" mixed="true">
+  <xs:complexType name="lineType" mixed="true">
 
     <xs:sequence>
 
-      <!-- optional opening first word -->
-
-      <xs:element name="first_word"
-                  type="xs:string"
-                  minOccurs="0"
-                  maxOccurs="1"/>
-
-      <!-- required rhyme ending -->
+      <!-- embedded rhyme annotation -->
 
       <xs:element name="rhyme"
                   type="rhymeType"
-                  minOccurs="1"
-                  maxOccurs="1"/>
+                  minOccurs="0"
+                  maxOccurs="unbounded"/>
 
     </xs:sequence>
 
-  </xs:complexType>
+    <xs:attribute name="number" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
 
-  <!-- ========================================================= -->
-  <!-- QUATRAIN LINE TYPES -->
-  <!-- ========================================================= -->
+          <xs:enumeration value="1"/>
+          <xs:enumeration value="2"/>
+          <xs:enumeration value="3"/>
+          <xs:enumeration value="4"/>
 
-  <xs:complexType name="quatrainAntecedentLine1">
-    <xs:complexContent>
-      <xs:extension base="baseLineType">
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
 
-        <xs:attribute name="number" use="required" fixed="1"/>
-
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="quatrainAntecedentLine2">
-    <xs:complexContent>
-      <xs:extension base="baseLineType">
-
-        <xs:attribute name="number" use="required" fixed="2"/>
-
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="quatrainConsequentLine3">
-    <xs:complexContent>
-      <xs:extension base="baseLineType">
-
-        <xs:attribute name="number" use="required" fixed="3"/>
-
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="quatrainConsequentLine4">
-    <xs:complexContent>
-      <xs:extension base="baseLineType">
-
-        <xs:attribute name="number" use="required" fixed="4"/>
-
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <!-- ========================================================= -->
-  <!-- COUPLET LINE TYPES -->
-  <!-- ========================================================= -->
-
-  <xs:complexType name="coupletAntecedentLine1">
-    <xs:complexContent>
-      <xs:extension base="baseLineType">
-
-        <xs:attribute name="number" use="required" fixed="1"/>
-
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="coupletConsequentLine2">
-    <xs:complexContent>
-      <xs:extension base="baseLineType">
-
-        <xs:attribute name="number" use="required" fixed="2"/>
-
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
 
   <!-- ========================================================= -->
@@ -211,7 +127,7 @@
 
       <xs:extension base="xs:string">
 
-        <!-- flexible rhyme identity -->
+        <!-- rhyme scheme -->
 
         <xs:attribute name="scheme" use="required">
           <xs:simpleType>
