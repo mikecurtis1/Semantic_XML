@@ -6,6 +6,14 @@ Schema to validate semantic structure and CSS to render visually.
 
 This project explores XML as both a semantic literary encoding system and a presentation-aware document model. Structural poetic relationships such as rhyme scheme, cadence, stanza organization, and typographic emphasis are represented directly in XML and selectively visualized through CSS attribute selectors.
 
+One of the secondary goals of this project is to treat DTD and XSD not simply as legacy XML technologies, but as exercises in explicit structural design. Although they are not programming object models, they require a similar kind of disciplined thinking: defining relationships between elements, constraining valid structure, and making assumptions about data explicit before implementation.
+
+In that sense, the schema definitions function as a formal contract for the shape of the data, independent of any particular processing system or output format. This mirrors broader design concerns found in database schema design, API contracts, and type systems, where clarity of structure is more important than the mechanics of implementation.
+
+The intent here is not to modernize XML into something it is not, but to use it as a concrete example of how structured thinking about data can be expressed in multiple formalisms, each with different strengths and historical contexts.
+
+DTD/XSD express structure as a declarative contract rather than executable logic.
+
 ## Why a Sonnet?
 
 At first glance, a sonnet may seem like an unusual or even decorative choice for a structured XML example. However, its value lies in how it exposes a broader distinction in data modeling: the difference between structures that describe metadata about content and structures that participate in the embedded semantics of the content itself.
@@ -19,6 +27,39 @@ This makes the sonnet a useful example for exploring how XML schemas can operate
 Seen this way, the example is not about poetry as subject matter, but about structure itself: specifically, how far a schema can move from describing a document toward encoding the rules that generate its meaning.
 
 ## A Sonnet Schema
+
+Formal structural specification of a literary form
+
+* exactly 4 quatrains
+* exactly 2 lines per couplet
+* ordered structure throughout
+* required metadata everywhere
+
+The schema isn’t just “modeling metadata,” it’s modeling:
+
+* structure
+* hierarchy
+* repetition rules
+* bounded length
+* grouped semantics (quatrain vs couplet)
+
+Tight semantic schema (sonnet)
+
+* fixed structure
+* bounded length
+* direct mapping to content units
+* easy validation
+* high determinism
+
+The sonnet schema operates at a level where structural constraints closely track the smallest meaningful units of the content itself.
+
+Sonnet schema is a constrained semantic form where structure encodes interpretation. XML schema validation ensures valid form expression.
+
+* missing quatrain → meaningful failure
+* broken rhyme scheme → structural violation
+* incorrect grouping → semantic inconsistency
+
+This project also highlights a broader distinction in structured data modeling: some schemas primarily describe metadata about a domain (such as musical composition structures), while others—like the sonnet model—encode structural rules that directly participate in the meaning of the underlying content.
 
 While the XML schema could theoretically enforce a rigid Shakespearean rhyme sequence such as `ABAB CDCD EFEF GG`, doing so would overconstrain the model and fail to reflect the more fluid rhyme relationships present within the poem itself (sonnet 29 has an actual rhyme scheme of `ABAB CDCD EBEB GG`.) The schema instead emphasizes "cadence" relationships (antecedent/consequent) - cadence, antecedent, and consequent are terms I borrowed from music theory, but represent well the actual attributes of rhyming in sonnet 29 - as a more generalized representation of poetic structural function while leaving specific rhyme identity more flexible.
 
@@ -48,29 +89,28 @@ This allows for a schema that...
 * cadence structure remains enforceable
 * Shakespearean variation remains possible
 
-Schema precision issues
+### DTD 
 
-Defining a `line` and methods for selecting the nth letter of a line.
+A DTD defines rules like:
 
-> must begin with an optional `first_word` element, then arbitrary text, then must end with a `rhyme` element
+* what elements are allowed
+* what order they must appear in
+* what attributes exist and whether they’re required
+* what can be repeated (*, +, ?)
 
-DTD encoding versus reality
+Known issue defining structural sequence with _mixed_ content.
 
-> ```xml
-> <!ELEMENT line (first_word?, (#PCDATA), rhyme)>
-> ```
->
-> versus 
->
-> ```xml
-> <!ELEMENT line (#PCDATA|first_word|rhyme)*>
-> ```
+### XSD
 
-Known issue defining structural sequence with mixed content.
+* structured model with constraints
+* explicit typing
+* more declarative precision
 
 DTDs provided a compact and human-readable way to describe document structure, while XSD expanded XML validation into a far more expressive but substantially more verbose schema language. This project intentionally explores both approaches as examples of formal data modeling rather than as recommendations for contemporary production workflows.
 
 ## libxml2 and xmllint
+
+In the past web browsers could validate XML documents with declared DTD or XSD schema, but that function is now deprecated or already removed. But, the command line tool `xmllint` can be used instead for XML schema vaidation.
 
 > <https://gitlab.gnome.org/GNOME/libxml2>
 
