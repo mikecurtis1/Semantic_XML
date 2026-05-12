@@ -20,10 +20,6 @@ Seen this way, the example is not about poetry as subject matter, but about stru
 
 ## A Sonnet Schema
 
-* formal units of text: word, line, stanza, quatrain, couplet
-* attributes of text: position & sequence, rhyme, metadata & content
-* technical encoding and selectors
-
 While the XML schema could theoretically enforce a rigid Shakespearean rhyme sequence such as `ABAB CDCD EFEF GG`, doing so would overconstrain the model and fail to reflect the more fluid rhyme relationships present within the poem itself (sonnet 29 has an actual rhyme scheme of `ABAB CDCD EBEB GG`.) The schema instead emphasizes "cadence" relationships (antecedent/consequent) - cadence, antecedent, and consequent are terms I borrowed from music theory, but represent well the actual attributes of rhyming in sonnet 29 - as a more generalized representation of poetic structural function while leaving specific rhyme identity more flexible.
 
 Attempting to fully encode the Shakespearean rhyme sequence directly into XSD quickly causes the schema to become excessively instance-specific, effectively transforming the schema into a structural duplicate of the sonnet itself. The project therefore intentionally stops short of enforcing exact rhyme-order semantics in favor of maintaining a more generalized and reusable document model.
@@ -55,8 +51,6 @@ This allows for a schema that...
 Schema precision issues
 
 Defining a `line` and methods for selecting the nth letter of a line.
-
-While a purely semantic encoding of the text was the first priority of creating a schema prior knowledge of both typography and CSS made me aware that a mechanism to select and style the first letter of the sonnet as a large, stylized drop cap would be desireable for the final visual rendering. With that in mind, text can be handled generally in two ways - explict markup or relative relationships typically an ordinal numbering at some level: character, word token, or other delimited block. XML offers tools for markup and CSS for relative selection. Markup of the first letter or word undermines the semantic purtiy of a sonnet schema and unfortunately CSS 
 
 > must begin with an optional `first_word` element, then arbitrary text, then must end with a `rhyme` element
 
