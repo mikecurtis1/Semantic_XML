@@ -44,6 +44,26 @@ This allows for a schema that...
 * cadence structure remains enforceable
 * Shakespearean variation remains possible
 
+Schema precision issues
+
+Defining a `line` and methods for selecting the nth letter of a line.
+
+> must begin with an optional `first_word` element, then arbitrary text, then must end with a `rhyme` element
+
+DTD encoding versus reality
+
+> ```xml
+> <!ELEMENT line (first_word?, (#PCDATA), rhyme)>
+> ```
+>
+> versus 
+>
+> ```xml
+> <!ELEMENT line (#PCDATA|first_word|rhyme)*>
+> ```
+
+Known issue defining structural sequence with mixed content.
+
 DTDs provided a compact and human-readable way to describe document structure, while XSD expanded XML validation into a far more expressive but substantially more verbose schema language. This project intentionally explores both approaches as examples of formal data modeling rather than as recommendations for contemporary production workflows.
 
 ## libxml2
@@ -125,18 +145,6 @@ head src/sonnet29.dtd
         <!ELEMENT rhymeA (#PCDATA)>
         <!ELEMENT rhymeB (#PCDATA)>
 ```
-
-Schema precision issues
-
-> ```xml
-> <!ELEMENT line (first_word?, (#PCDATA), rhyme)>
-> ```
->
-> versus 
->
-> ```xml
-> <!ELEMENT line (#PCDATA|first_word|rhyme)*>
-> ```
 
 ```bash
 xmllint --noout --dtdvalid src/sonnet29.dtd src/sonnet29.xml
