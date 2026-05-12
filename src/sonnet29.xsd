@@ -1,60 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <!-- Root document -->
+  <!-- ========================================================= -->
+  <!-- DOCUMENT -->
+  <!-- ========================================================= -->
+
   <xs:element name="document">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="sonnet" maxOccurs="unbounded">
-          <xs:complexType>
-            <xs:sequence>
-
-              <xs:element name="title" type="xs:string"/>
-
-              <!-- Exactly 4 quatrains -->
-              <xs:element name="quatrain" minOccurs="4" maxOccurs="4">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="line" type="lineType" minOccurs="4" maxOccurs="4"/>
-                  </xs:sequence>
-
-                  <xs:attribute name="number" type="xs:string" use="required"/>
-                </xs:complexType>
-              </xs:element>
-
-              <!-- Couplet -->
-              <xs:element name="couplet">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="line" type="lineType" minOccurs="2" maxOccurs="2"/>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-
-              <xs:element name="author" type="xs:string"/>
-              <xs:element name="hr"/>
-
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
+        <xs:element name="sonnet" type="sonnetType" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <!-- Line definition -->
-  <xs:complexType name="lineType">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="first_word"/>
-      <xs:element name="first_letter"/>
-      <xs:element name="rhymeA"/>
-      <xs:element name="rhymeB"/>
-      <xs:element name="rhymeC"/>
-      <xs:element name="rhymeD"/>
-      <xs:element name="rhymeE"/>
-      <xs:element name="rhymeF"/>
-      <xs:element name="rhymeG"/>
-    </xs:choice>
-    <xs:attribute name="number" type="xs:string" use="required"/>
+  <!-- ========================================================= -->
+  <!-- SONNET -->
+  <!-- ========================================================= -->
+
+  <xs:complexType name="sonnetType">
+    <xs:sequence>
+
+      <xs:element name="title" type="xs:string"/>
+
+      <!-- exactly three quatrains -->
+
+      <xs:element name="quatrain" type="quatrainType"/>
+      <xs:element name="quatrain" type="quatrainType"/>
+      <xs:element name="quatrain" type="quatrainType"/>
+
+      <!-- exactly one couplet -->
+
+      <xs:element name="couplet" type="coupletType"/>
+
+      <!-- author -->
+
+      <xs:element name="author" type="authorType"/>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ========================================================= -->
+  <!-- QUATRAIN -->
+  <!-- ========================================================= -->
+
+  <xs:complexType name="quatrainType">
+    <xs:sequence>
+
+      <!-- exactly four lines -->
+
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
+
+    </xs:sequence>
+
+    <xs:attribute name="number" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+
+          <xs:enumeration value="1"/>
+          <xs:enumeration value="2"/>
+          <xs:enumeration value="3"/>
+
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+
+  </xs:complexType>
+
+  <!-- ========================================================= -->
+  <!-- COUPLET -->
+  <!-- ========================================================= -->
+
+  <xs:complexType name="coupletType">
+    <xs:sequence>
+
+      <!-- exactly two lines -->
+
+      <xs:element name="line" type="lineType"/>
+      <xs:element name="line" type="lineType"/>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ========================================================= -->
+  <!-- LINE -->
+  <!-- ========================================================= -->
+
+  <xs:complexType name="lineType" mixed="true">
+
+    <xs:sequence>
+
+      <!-- embedded rhyme annotation -->
+
+      <xs:element name="rhyme"
+                  type="rhymeType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"/>
+
+    </xs:sequence>
+
+    <xs:attribute name="number" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+
+          <xs:enumeration value="1"/>
+          <xs:enumeration value="2"/>
+          <xs:enumeration value="3"/>
+          <xs:enumeration value="4"/>
+
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+
+  </xs:complexType>
+
+  <!-- ========================================================= -->
+  <!-- RHYME -->
+  <!-- ========================================================= -->
+
+  <xs:complexType name="rhymeType">
+
+    <xs:simpleContent>
+
+      <xs:extension base="xs:string">
+
+        <!-- rhyme scheme -->
+
+        <xs:attribute name="scheme" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+
+              <xs:enumeration value="A"/>
+              <xs:enumeration value="B"/>
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="D"/>
+              <xs:enumeration value="E"/>
+              <xs:enumeration value="F"/>
+              <xs:enumeration value="G"/>
+
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+
+        <!-- rhyme quality -->
+
+        <xs:attribute name="type" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+
+              <xs:enumeration value="perfect"/>
+              <xs:enumeration value="near"/>
+
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+
+        <!-- cadence role -->
+
+        <xs:attribute name="cadence" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+
+              <xs:enumeration value="antecedent"/>
+              <xs:enumeration value="consequent"/>
+
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+
+      </xs:extension>
+
+    </xs:simpleContent>
+
+  </xs:complexType>
+
+  <!-- ========================================================= -->
+  <!-- AUTHOR -->
+  <!-- ========================================================= -->
+
+  <xs:complexType name="authorType">
+    <xs:sequence>
+
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="date" type="xs:string"/>
+
+    </xs:sequence>
   </xs:complexType>
 
 </xs:schema>
