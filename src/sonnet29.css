@@ -70,17 +70,10 @@ line {
 quatrain[number="1"] line[number="1"]::first-letter {
   display: inline;
   font-family: Garamond, serif;
-  font-size: 2em;
+  font-size: 3em;
   float:left;
   padding-top: 0.2em;
-}
-
-first_word {
-  display: inline;
-  font-family: var(--font-first-word);
-  font-size: 1.25em;
-  font-variant: small-caps;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.1em;
 }
 
 couplet {
