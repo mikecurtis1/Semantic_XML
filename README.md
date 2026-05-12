@@ -1,6 +1,8 @@
 # Semantic XML
 
-Introduction
+Introduction.
+
+Schema to validate semantic structure and CSS to render visually.
 
 ## Why a Sonnet?
 
@@ -218,12 +220,14 @@ src/sonnet29.xml validates
 
 ## CSS 
 
+Why CSS.
+
+Recap `first_word` element concern.
+
 > The browser is a “renderer”, not a transformer.
 
-[Sonnet XXIX rendered with CSS in browser](https://mikecurtis1.github.io/XML_Sonnet/src/sonnet29.xml)
+[Sonnet XXIX rendered with CSS in browser](https://mikecurtis1.github.io/Semantic_XML/src/sonnet29.xml)
 
-![Image of 1609 printing](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029_1609.png)
+![PNG of CSS rendering](https://mikecurtis1.github.io/Semantic_XML/img/sonnet029.png)
 
-![PNG of CSS rendering](https://mikecurtis1.github.io/XML_Sonnet/img/sonnet029.png)
-
-
+![Image of 1609 printing](https://mikecurtis1.github.io/Semantic_XML/img/sonnet029_1609.png)
