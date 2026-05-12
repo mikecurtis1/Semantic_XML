@@ -3,8 +3,7 @@
 		<!ELEMENT title (#PCDATA)>
 		<!ELEMENT quatrain (line, line, line, line)>
 		<!ELEMENT couplet (line, line)>
-			<!ELEMENT line (#PCDATA|first_word|rhyme)*>
-				<!ELEMENT first_word (#PCDATA)>
+			<!ELEMENT line (#PCDATA|rhyme)*>
 				<!ELEMENT rhyme (#PCDATA)>
 		<!ELEMENT author (name,date)>
 			<!ELEMENT name (#PCDATA)>
