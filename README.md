@@ -4,6 +4,8 @@ Introduction.
 
 Schema to validate semantic structure and CSS to render visually.
 
+This project explores XML as both a semantic literary encoding system and a presentation-aware document model. Structural poetic relationships such as rhyme scheme, cadence, stanza organization, and typographic emphasis are represented directly in XML and selectively visualized through CSS attribute selectors.
+
 ## Why a Sonnet?
 
 At first glance, a sonnet may seem like an unusual or even decorative choice for a structured XML example. However, its value lies in how it exposes a broader distinction in data modeling: the difference between structures that describe metadata about content and structures that participate in the embedded semantics of the content itself.
@@ -222,12 +224,50 @@ src/sonnet29.xml validates
 
 Why CSS.
 
-Recap `first_word` element concern.
-
 > The browser is a “renderer”, not a transformer.
+
+Historic typography background.
+
+Review `first_word` element drop cap sematic versus presentation concern.
+
+`white-space: nowrap`, printed page emulation, responsive design, and accessibility. Normally, `white-space: nowrap` is hostile to responsive design because it fights: viewport adaptation, text reflow, accessibility expectations. But this CSS rendering presents a preserved literary artifact, a manuscript page, where the poetic line is a meaningful structural unit. A centered fixed-width manuscript block floating within the viewport. Viewing a preserved page. CSS `nowrap` is a _visual_ rendering option separate from the XML structure. In terms of accessibility the CSS is ignored while the XML presents no obstacle to screen readers.
+
+Rendering rhyme. Including rhyme attributes `scheme` letter, `type`, and `cadence` provides rich detail beyond mere line enumeration and sequencing. It brings poetic analytical encoding to the markup. Visual rendering of these attributes therefore is not merely aesthetic, but should embody an analytical intent, and provide a visual aid to literary analysis. Three aspects needed to be viusalized without adding visual _clutter_. `Type` and `cadence` required only distinguishing two values while `scheme` distinguishes seven. Some text visualizations are inherently binary - underline/normal, italic/normal - while color offers a range of values. Therefore, `type` was rendered with `italic/normal`, `cadence` with `underline/normal` and the seven scheme letters with `color`.
+
+Rendering quatrain and couplet.
+
+Font face. Google font `IM Fell DW Pica` is based on an original font from John Fell, D.D. who died on 10 July 1686. It is an appropriate historical font for a Renaissance feel and has an irregular texture that mimics the appearance of historical printed texts. 
+
+Flouret decoration. Unicdoe dingbats at first seem  anathema to both tasteful typography and semantic meaningfulness, but in fact certain historic flouret marks and included in the Unicode dingbat block.
+
+### The especially elegant part of your project
+
+You now have:
+
+* semantic literary structure
+* analytical metadata
+* visual rendering rules
+* accessibility-preserving document order
+* archival aesthetics
+
+all while using:
+
+* plain XML
+* CSS
+* browser rendering
+
+with almost no tooling.
+
+That’s actually a remarkably pure demonstration of the original XML philosophy.
+
+### Browser 
 
 [Sonnet XXIX rendered with CSS in browser](https://mikecurtis1.github.io/Semantic_XML/src/sonnet29.xml)
 
+### PNG for long term
+
 ![PNG of CSS rendering](https://mikecurtis1.github.io/Semantic_XML/img/sonnet029.png)
+
+### Comparison to 1609 first printing
 
 ![Image of 1609 printing](https://mikecurtis1.github.io/Semantic_XML/img/sonnet029_1609.png)
