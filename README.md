@@ -66,9 +66,18 @@ Known issue defining structural sequence with mixed content.
 
 DTDs provided a compact and human-readable way to describe document structure, while XSD expanded XML validation into a far more expressive but substantially more verbose schema language. This project intentionally explores both approaches as examples of formal data modeling rather than as recommendations for contemporary production workflows.
 
-## libxml2
+## libxml2 and xmllint
 
 > <https://gitlab.gnome.org/GNOME/libxml2>
+
+With xmllint validating cleanly, you now have:
+
+* well-formed XML
+* structurally valid DTD constraints
+* reproducible validation outside the browser
+* a reliable baseline for the sonnet model
+
+That means your schema is no longer just conceptual — it’s enforceable.
 
 ## Workflow
 
