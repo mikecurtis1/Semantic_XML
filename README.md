@@ -136,7 +136,7 @@ head src/sonnet29.xml
   <sonnet>
     <title>Sonnet XXIX</title>
     <quatrain number="1">
-      <line number="1"><first_word><first_letter>W</first_letter>hen</first_word> in disgrace with fortune and men's e<rhymeA type="perfect" cadence="antecedent">yes</rhymeA>,</line>
+      <line number="1">When in disgrace with fortune and men's e<rhymeA type="perfect" cadence="antecedent">yes</rhymeA>,</line>
       <line number="2">I all alone beweep my outcast st<rhymeB type="perfect" cadence="antecedent">ate</rhymeB>,</line>
       <line number="3">And trouble deaf heaven with my bootless cr<rhymeA type="perfect" cadence="consequent">ies</rhymeA>,</line>
 ```
@@ -148,15 +148,15 @@ head src/sonnet29.dtd
 ```
 ```xml
 <!ELEMENT document (sonnet+)>
-  <!ELEMENT sonnet (title,quatrain,quatrain,quatrain,couplet,author,hr)>
-    <!ELEMENT title (#PCDATA)>
-    <!ELEMENT quatrain (line,line,line,line)>
-    <!ELEMENT couplet (line,line)>
-      <!ELEMENT line ANY>
-        <!ELEMENT first_word (#PCDATA|first_letter)*>
-          <!ELEMENT first_letter (#PCDATA)>
-        <!ELEMENT rhymeA (#PCDATA)>
-        <!ELEMENT rhymeB (#PCDATA)>
+	<!ELEMENT sonnet (title, quatrain, quatrain, quatrain, couplet, author)>
+		<!ELEMENT title (#PCDATA)>
+		<!ELEMENT quatrain (line, line, line, line)>
+		<!ELEMENT couplet (line, line)>
+			<!ELEMENT line (#PCDATA|rhyme)*>
+				<!ELEMENT rhyme (#PCDATA)>
+		<!ELEMENT author (name,date)>
+			<!ELEMENT name (#PCDATA)>
+			<!ELEMENT date (#PCDATA)>
 ```
 
 ```bash
@@ -204,9 +204,9 @@ head -30 src/sonnet29.xsd
 
       <!-- exactly three quatrains -->
 
-      <xs:element name="quatrain" type="quatrain1Type"/>
-      <xs:element name="quatrain" type="quatrain2Type"/>
-      <xs:element name="quatrain" type="quatrain3Type"/>
+      <xs:element name="quatrain" type="quatrainType"/>
+      <xs:element name="quatrain" type="quatrainType"/>
+      <xs:element name="quatrain" type="quatrainType"/>
 ```
 ```bash
 head src/sonnet29.xml
