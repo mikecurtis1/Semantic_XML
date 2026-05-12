@@ -2,4 +2,6 @@
 *.xml linguist-language=XML
 *.xsd linguist-detectable=true
 *.xsd linguist-language=XML
+*.css linguist-detectable=true
+*.css linguist-language=CSS
 *.md linguist-documentation=true
