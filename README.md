@@ -1,6 +1,6 @@
 # Semantic XML
 
-Introduction.
+Introduction. 
 
 Schema to validate semantic structure and CSS to render visually.
 
