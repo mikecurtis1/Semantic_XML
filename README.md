@@ -386,7 +386,7 @@ src/sonnet29.xml validates
 
 ### Browser 
 
-[Sonnet XXIX rendered with CSS in browser](https://mikecurtis1.github.io/Semantic_XML/src/sonnet29.xml)
+> [Sonnet XXIX rendered with CSS in browser](https://mikecurtis1.github.io/Semantic_XML/src/sonnet29.xml)
 
 ### PNG for long term
 
