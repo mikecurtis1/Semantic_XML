@@ -326,14 +326,15 @@ head src/sonnet29.dtd
 ```bash
 xmllint --noout --dtdvalid src/sonnet29.dtd src/sonnet29.xml
 ```
+
+> `xmllint` is silent. Check last exit code to verify it ran without error.
+
 ```bash
 echo $?
 ```
 ```text
 0
 ```
-
-> `xmllint` is silent. Check last exit code to verify it ran without error.
 
 ### XSD
 
