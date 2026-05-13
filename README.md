@@ -321,6 +321,8 @@ head src/sonnet29.dtd
 			<!ELEMENT date (#PCDATA)>
 ```
 
+### xmllint
+
 ```bash
 xmllint --noout --dtdvalid src/sonnet29.dtd src/sonnet29.xml
 ```
@@ -370,9 +372,9 @@ head -30 src/sonnet29.xsd
       <xs:element name="quatrain" type="quatrainType"/>
       <xs:element name="quatrain" type="quatrainType"/>
 ```
-```bash
-head src/sonnet29.xml
-```
+
+### xmllint
+
 ```bash
 xmllint --noout --schema src/sonnet29.xsd src/sonnet29.xml
 ```
