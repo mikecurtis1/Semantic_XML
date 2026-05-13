@@ -283,7 +283,7 @@ docker exec -it sonnet-container bash
 
 ---
 
-## Output
+## Validation
 
 ### XML 
 
